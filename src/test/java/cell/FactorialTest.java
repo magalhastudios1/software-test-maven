@@ -17,11 +17,11 @@ public class FactorialTest {
 
     @Test
     public void toString_two_returnsOne() {
-        assertEquals("2.0", new Factorial(1).toString());
+        assertEquals("2.0", new Factorial(2).toString());
     }
 
     @Test
     public void toString_three_returnsOne() {
-        assertEquals("6.0", new Factorial(1).toString());
+        assertEquals("6.0", new Factorial(3).toString());
     }
 }
