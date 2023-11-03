@@ -34,7 +34,7 @@ public class MatrixDotProduct extends Cell implements NumberFormula {
             for (int y = 0; y < height; y++) {
                 Number numberA = (Number) sheet.getElement(startAX + x, startAY + y);
                 Number numberB = (Number) sheet.getElement(startBX + x, startBY + y);
-                result *= numberA.getValue() * numberB.getValue();
+                result += numberA.getValue() * numberB.getValue();
             }
         }
         return result;
