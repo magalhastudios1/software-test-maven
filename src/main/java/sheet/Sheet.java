@@ -1,4 +1,6 @@
-package hello;
+package sheet;
+
+import cell.Cell;
 
 public final class Sheet{
     private int width;

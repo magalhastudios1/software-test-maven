@@ -1,4 +1,4 @@
-package hello;
+package cell;
 
 public abstract class Cell{
     private String text;
