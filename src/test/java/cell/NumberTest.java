@@ -18,11 +18,11 @@ public class NumberTest {
   
   @Test
   public void toString_float_negative_floatStringWithTrace() {
-    assertEquals("-50.0", new Number(-50.0).toString());
+    assertEquals("-50.0", new Number(-50.0F).toString());
   }
 
   @Test
   public void toString_float_positive_floatString() {
-    assertEquals("50.0", new Number(50.0).toString());
+    assertEquals("50.0", new Number(50.0F).toString());
   }
 }
