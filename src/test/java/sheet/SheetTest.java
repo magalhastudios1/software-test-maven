@@ -42,7 +42,6 @@ public class SheetTest {
 
   @Test
   public void getElement_stringCoordenates_returnsElement() {
-
     Sheet sheet = Sheet.getInstance(50, 50);
     sheet.addElement(new Text("Hello!"), 25, 25);
 

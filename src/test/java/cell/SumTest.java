@@ -11,6 +11,7 @@ public class SumTest {
     Sheet sheet;
 
     @Before public void setUp() {
+        Sheet.reset();
        sheet = Sheet.getInstance(50, 50);
     }
 

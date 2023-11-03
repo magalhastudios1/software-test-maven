@@ -10,8 +10,10 @@ import sheet.Sheet;
 public class MatrixSumTest {
     Sheet sheet;
 
-    @Before public void setUp() {
-       sheet = Sheet.getInstance(50, 50);
+    @Before
+    public void setUp() {
+        Sheet.reset();
+        sheet = Sheet.getInstance(50, 50);
     }
 
     @Test
@@ -26,7 +28,7 @@ public class MatrixSumTest {
         assertEquals(20.F, new MatrixSum(0, 0, 1, 1, 0, 0).calculate(), 0);
     }
 
-        @Test
+    @Test
     public void calculate_oneElementInterval_returnsElementsSumValue() {
         sheet.addElement(new Number(10), 0, 0);
         sheet.addElement(new Number(20), 1, 0);

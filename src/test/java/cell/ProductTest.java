@@ -10,8 +10,10 @@ import sheet.Sheet;
 public class ProductTest {
     Sheet sheet;
 
-    @Before public void setUp() {
-       sheet = Sheet.getInstance(50, 50);
+    @Before
+    public void setUp() {
+        Sheet.reset();
+        sheet = Sheet.getInstance(50, 50);
     }
 
     @Test
