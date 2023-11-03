@@ -28,7 +28,7 @@ public final class Sheet{
         return this.width * this.height;
     }
 
-    void setElement(Cell cell, int x, int y){
+    public void addElement(Cell cell, int x, int y){
         board[x][y] = cell;
     }
 
