@@ -24,6 +24,10 @@ public final class Sheet {
         return instance;
     }
 
+    public static void reset(){
+        instance = null;
+    }
+    
     public int getArea() {
         return this.width * this.height;
     }

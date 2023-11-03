@@ -2,6 +2,7 @@ package sheet;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Test;
 
 import cell.Number;
@@ -66,5 +67,10 @@ public class SheetTest {
     sheet.addElement(new Number(20), 1, 0);
 
     assertEquals("Hello | World\n10.0 | 20.0", sheet.printTable());
+  }
+
+  @After
+  public void tearDown(){
+    Sheet.reset();
   }
 }
