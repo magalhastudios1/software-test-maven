@@ -57,6 +57,4 @@ public final class Sheet{
 
         return position;
     }
-
-
 }

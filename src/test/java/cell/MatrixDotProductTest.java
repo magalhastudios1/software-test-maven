@@ -43,4 +43,19 @@ public class MatrixDotProductTest {
 
         assertEquals(225.F, new MatrixDotProduct(0, 0, 2, 1, 0, 1).calculate(), 0);
     }
+
+    @Test
+    public void calculate_squareMatrixElementInterval_returnsMatrixDotProductValue() {
+        sheet.addElement(new Number(1), 0, 0);
+        sheet.addElement(new Number(2), 1, 0);
+        sheet.addElement(new Number(3), 0, 1);
+        sheet.addElement(new Number(4), 1, 1);
+
+        sheet.addElement(new Number(1), 5, 5);
+        sheet.addElement(new Number(2), 6, 5);
+        sheet.addElement(new Number(3), 5, 6);
+        sheet.addElement(new Number(4), 6, 6);
+
+        assertEquals(30.F, new MatrixDotProduct(0, 0, 2, 2, 5, 5).calculate(), 0);
+    }
 }
