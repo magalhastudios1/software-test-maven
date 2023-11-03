@@ -4,9 +4,9 @@ public abstract class Cell{
     private String text;
     private Sheet sheet;
     
-    public float getValue();
+    public abstract float getValue();
 
-    protected Sheet getSheet();
+    protected abstract Sheet getSheet();
 
-    protected Cell getSheetElement();
+    protected abstract Cell getSheetElement();
 }
