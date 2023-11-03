@@ -21,14 +21,26 @@ public class SumTest {
 
     @Test
     public void calculate_oneElementInterval_returnsElementValue() {
-        sheet.addElement(new Number(50), 0, 0);
-        assertEquals(50.F, new Sum(0, 1, 0, 1).calculate(), 0);
+        sheet.addElement(new Number(100), 0, 0);
+        
+        assertEquals(100.F, new Sum(0, 1, 0, 1).calculate(), 0);
     }
 
     @Test
     public void calculate_twoElementInterval_returnsSumValue() {
-        sheet.addElement(new Number(50), 0, 0);
-        sheet.addElement(new Number(70), 1, 0);
-        assertEquals(120.F, new Sum(0, 2, 0, 1).calculate(), 0);
+        sheet.addElement(new Number(100), 0, 0);
+        sheet.addElement(new Number(100), 1, 0);
+
+        assertEquals(200.F, new Sum(0, 2, 0, 1).calculate(), 0);
+    }
+
+    @Test
+    public void calculate_matrixInterval_returnsSumValue() {
+        sheet.addElement(new Number(100), 0, 0);
+        sheet.addElement(new Number(100), 1, 0);
+        sheet.addElement(new Number(100), 0, 1);
+        sheet.addElement(new Number(100), 1, 1);
+
+        assertEquals(400.F, new Sum(0, 2, 0, 2).calculate(), 0);
     }
 }
