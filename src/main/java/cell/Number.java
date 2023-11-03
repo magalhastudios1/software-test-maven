@@ -1,6 +1,6 @@
 package cell;
 
-public class Number{
+public class Number extends Cell{
 
     private float value;
 
