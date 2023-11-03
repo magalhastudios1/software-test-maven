@@ -42,6 +42,7 @@ public class SheetTest {
 
   @Test
   public void getElement_stringCoordenates_returnsElement() {
+
     Sheet sheet = Sheet.getInstance(50, 50);
     sheet.addElement(new Text("Hello!"), 25, 25);
 
@@ -50,6 +51,7 @@ public class SheetTest {
 
   @Test
   public void printTable_oneRow_returnsLine() {
+    Sheet.reset();
     Sheet sheet = Sheet.getInstance(2, 1);
     sheet.addElement(new Text("Hello"), 0, 0);
     sheet.addElement(new Text("World"), 1, 0);
@@ -59,6 +61,7 @@ public class SheetTest {
 
   @Test
   public void printTable_twoRow_returnsTwoLines() {
+    Sheet.reset();
     Sheet sheet = Sheet.getInstance(2, 1);
     sheet.addElement(new Text("Hello"), 0, 0);
     sheet.addElement(new Text("World"), 1, 0);
@@ -67,10 +70,5 @@ public class SheetTest {
     sheet.addElement(new Number(20), 1, 0);
 
     assertEquals("Hello | World\n10.0 | 20.0", sheet.printTable());
-  }
-
-  @After
-  public void tearDown(){
-    Sheet.reset();
   }
 }
