@@ -18,4 +18,8 @@ public final class Sheet{
     public int getArea(){
         return this.width * this.height;
     }
+
+    public Cell getElement(int x, int y){
+        return this.board[x][y];
+    }
 }
