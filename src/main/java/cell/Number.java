@@ -11,7 +11,6 @@ public class Number extends Cell{
     @Override
     public String toString(){
         return String.valueOf(this.value);
-
     }
 
     public float getValue(){
