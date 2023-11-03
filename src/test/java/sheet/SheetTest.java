@@ -60,12 +60,12 @@ public class SheetTest {
     sheet.addElement(new Text("Hello"), 0, 0);
     sheet.addElement(new Text("World"), 1, 0);
 
-    assertEquals("Hello | World", sheet.printTable());
+    assertEquals("Hello | World\n", sheet.printTable());
   }
 
   @Test
   public void printTable_twoRow_returnsTwoLines() {
-    Sheet sheet = Sheet.getInstance(2, 1);
+    Sheet sheet = Sheet.getInstance(2, 2);
     sheet.addElement(new Text("Hello"), 0, 0);
     sheet.addElement(new Text("World"), 1, 0);
 
