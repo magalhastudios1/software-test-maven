@@ -10,7 +10,7 @@ public final class Sheet{
 
     private Cell [][] board;
 
-    public Sheet(int width, int height){
+    private Sheet(int width, int height){
         this.width = width;
         this.height = height;
 
