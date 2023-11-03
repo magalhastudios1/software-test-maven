@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import cell.Text;
+
 public class SheetTest {
   @Test
   public void getArea_oneInstance_returnsFirstInstanceArea() {
@@ -34,5 +36,13 @@ public class SheetTest {
   @Test
   public void xStringToInteger_twoElement_AA_returns26() {
     assertEquals(26, Sheet.xStringToInteger("AA"));
+  }
+
+  @Test
+  public void getElement_stringCoordenates_returnsElement() {
+    Sheet sheet = Sheet.getInstance(50, 50);
+    sheet.addElement(new Text("Hello!"), 25, 25);
+
+    assertEquals("Hello", sheet.getElement("Z", "25").toString());
   }
 }
