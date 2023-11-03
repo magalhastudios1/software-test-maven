@@ -57,4 +57,18 @@ public final class Sheet{
 
         return position;
     }
+
+    public String printTable(){
+        String result = "";
+        for(int y = 0; y < height; y++){
+            for(int x = 0; x < width; x++){
+                result += getElement(x, y).toString();
+                if(x != width -1){
+                    result += " | ";
+                }
+            }
+            result += "\n";
+        }
+        return result;
+    }
 }

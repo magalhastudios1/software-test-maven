@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import cell.Number;
 import cell.Text;
 
 public class SheetTest {
@@ -44,5 +45,26 @@ public class SheetTest {
     sheet.addElement(new Text("Hello!"), 25, 25);
 
     assertEquals("Hello!", sheet.getElement("Z", "25").toString());
+  }
+
+  @Test
+  public void printTable_oneRow_returnsLine() {
+    Sheet sheet = Sheet.getInstance(2, 1);
+    sheet.addElement(new Text("Hello"), 0, 0);
+    sheet.addElement(new Text("World"), 1, 0);
+
+    assertEquals("Hello | World", sheet.printTable());
+  }
+
+  @Test
+  public void printTable_twoRow_returnsTwoLines() {
+    Sheet sheet = Sheet.getInstance(2, 1);
+    sheet.addElement(new Text("Hello"), 0, 0);
+    sheet.addElement(new Text("World"), 1, 0);
+
+    sheet.addElement(new Number(10), 1, 0);
+    sheet.addElement(new Number(20), 1, 0);
+
+    assertEquals("Hello | World\n10.0 | 20.0", sheet.printTable());
   }
 }
