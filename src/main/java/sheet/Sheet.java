@@ -35,4 +35,26 @@ public final class Sheet{
     public Cell getElement(int x, int y){
         return this.board[x][y];
     }
+
+    public Cell getElement(String x, String y){
+        int xInt = xStringToInteger(x);
+        int yInt = Integer.valueOf(y);
+        return getElement(xInt, yInt);
+    }   
+
+    public static int xStringToInteger(String x){
+        if(x != x.toUpperCase()){
+            return -1;
+        }
+
+        int position = 0;
+        for(int i = 0; i < x.length(); i++){
+           position += (int) x.charAt(i) - 65;
+           position += (64  - 90) * i;
+        }
+
+        return position;
+    }
+
+
 }
