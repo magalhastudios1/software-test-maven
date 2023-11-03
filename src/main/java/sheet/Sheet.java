@@ -27,17 +27,17 @@ public final class Sheet {
     public static void reset(){
         instance = null;
     }
-    
+
     public int getArea() {
         return this.width * this.height;
     }
 
     public void addElement(Cell cell, int x, int y) {
-        board[x][y] = cell;
+        board[y][x] = cell;
     }
 
     public Cell getElement(int x, int y) {
-        return this.board[x][y];
+        return this.board[y][x];
     }
 
     public Cell getElement(String x, String y) {
