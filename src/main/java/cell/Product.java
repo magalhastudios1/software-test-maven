@@ -10,7 +10,7 @@ public class Product extends Cell implements NumberFormula {
     private int startY;
     private int endY;
 
-    public Product(int startX, int endX, int startY, int endY){
+    public Product(int startX, int endX, int startY, int endY) {
         this.startX = startX;
         this.endX = endX;
 
@@ -19,11 +19,14 @@ public class Product extends Cell implements NumberFormula {
     }
 
     @Override
-    public float calculate(){
+    public float calculate() {
+        if (startX == endX && startY == endY) {
+            return 0;
+        }
         Sheet sheet = getSheet();
-        float product = 0;
-        for(int x = startX; x < endX; x++){
-            for(int y = startY; y < endY; y++){
+        float product = 1;
+        for (int x = startX; x < endX; x++) {
+            for (int y = startY; y < endY; y++) {
                 Number number = (Number) sheet.getElement(x, y);
                 product *= number.getValue();
             }
@@ -32,7 +35,7 @@ public class Product extends Cell implements NumberFormula {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.valueOf(this.calculate());
     }
 }
