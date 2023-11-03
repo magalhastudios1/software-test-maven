@@ -8,6 +8,6 @@ public class NumberTest {
 
   @Test
   public void toString_integer() {
-    assertEquals(new Number(50).toString(), "50");
+    assertEquals("50.0", new Number(50).toString());
   }
 }

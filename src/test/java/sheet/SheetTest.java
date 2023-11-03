@@ -8,7 +8,7 @@ public class SheetTest {
 
   @Test
   public void sheetArea() {
-    assertEquals(new Sheet(50, 50).getArea(), 2500);
+    assertEquals(2500, new Sheet(50, 50).getArea());
   }
 
 }
