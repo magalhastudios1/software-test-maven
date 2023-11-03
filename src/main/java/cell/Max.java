@@ -23,7 +23,7 @@ public class Max extends Cell implements NumberFormula {
     @Override
     public float calculate(){
         Sheet sheet = getSheet();
-        float max = Float.MAX_VALUE;
+        float max = Float.MIN_VALUE;
         for(int x = startX; x < endX; x++){
             for(int y = startY; y < endY; y++){
                 Number number = (Number) sheet.getElement(x, y);
