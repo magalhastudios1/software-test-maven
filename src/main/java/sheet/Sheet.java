@@ -14,7 +14,7 @@ public final class Sheet{
         this.width = width;
         this.height = height;
 
-        this.board = new Cell[width][height];
+        this.board = new Cell[height][width];
     }
 
     public static Sheet getInstance(int width, int height) {
