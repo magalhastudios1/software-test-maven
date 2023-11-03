@@ -72,6 +72,6 @@ public class SheetTest {
     sheet.addElement(new Number(10), 0, 1);
     sheet.addElement(new Number(20), 1, 1);
 
-    assertEquals("Hello | World\n10.0 | 20.0", sheet.printTable());
+    assertEquals("Hello | World\n10.0 | 20.0\n", sheet.printTable());
   }
 }
