@@ -3,6 +3,8 @@ package sheet;
 import cell.Cell;
 
 public final class Sheet{
+    private static Sheet instance;
+
     private int width;
     private int height;
 
@@ -15,8 +17,19 @@ public final class Sheet{
         this.board = new Cell[width][height];
     }
 
+    public static Sheet getInstance(int width, int height) {
+        if (instance == null) {
+            instance = new Sheet(width, height);
+        }
+        return instance;
+    }
+
     public int getArea(){
         return this.width * this.height;
+    }
+
+    void setElement(Cell cell, int x, int y){
+        board[x][y] = cell;
     }
 
     public Cell getElement(int x, int y){
