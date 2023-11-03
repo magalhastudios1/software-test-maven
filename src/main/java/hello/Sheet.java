@@ -4,20 +4,16 @@ public final class Sheet{
     private int width;
     private int height;
 
-    private int area;
-
-    private int [][] board;
+    private Cell [][] board;
 
     public Sheet(int width, int height){
         this.width = width;
         this.height = height;
-        
-        this.area = width * height;
 
-        this.board = new int[width][height];
+        this.board = new Cell[width][height];
     }
 
     public int getArea(){
-        return this.area;
+        return this.width * this.height;
     }
 }
