@@ -23,7 +23,7 @@ public class SheetTest {
 
   @Test
   public void xStringToInteger_oneElement_B_returnsOne() {
-    assertEquals(1, Sheet.xStringToInteger("A"));
+    assertEquals(1, Sheet.xStringToInteger("B"));
   }
 
   @Test

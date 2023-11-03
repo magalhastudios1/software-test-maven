@@ -43,6 +43,8 @@ public final class Sheet{
     }   
 
     public static int xStringToInteger(String x){
+        int LETTERS_IN_ALPHABET = 26;
+
         if(x != x.toUpperCase()){
             return -1;
         }
@@ -50,7 +52,7 @@ public final class Sheet{
         int position = 0;
         for(int i = 0; i < x.length(); i++){
            position += (int) x.charAt(i) - 65;
-           position += (64  - 90) * i;
+           position += LETTERS_IN_ALPHABET * i;
         }
 
         return position;
