@@ -3,12 +3,18 @@ package sheet;
 import static org.junit.Assert.*;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import cell.Number;
 import cell.Text;
 
 public class SheetTest {
+  @Before
+  public void setUp() {
+    Sheet.reset();
+  }
+
   @Test
   public void getArea_oneInstance_returnsFirstInstanceArea() {
     assertEquals(2500, Sheet.getInstance(50, 50).getArea());
@@ -50,7 +56,6 @@ public class SheetTest {
 
   @Test
   public void printTable_oneRow_returnsLine() {
-    Sheet.reset();
     Sheet sheet = Sheet.getInstance(2, 1);
     sheet.addElement(new Text("Hello"), 0, 0);
     sheet.addElement(new Text("World"), 1, 0);
@@ -60,7 +65,6 @@ public class SheetTest {
 
   @Test
   public void printTable_twoRow_returnsTwoLines() {
-    Sheet.reset();
     Sheet sheet = Sheet.getInstance(2, 1);
     sheet.addElement(new Text("Hello"), 0, 0);
     sheet.addElement(new Text("World"), 1, 0);
