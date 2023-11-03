@@ -29,7 +29,7 @@ public class MatrixDotProduct extends Cell implements NumberFormula {
             return 0;
         }
         Sheet sheet = getSheet();
-        float result = 1;
+        float result = 0;
         for (int x = 0; x < width; x++) {
             for (int y = 0; y < height; y++) {
                 Number numberA = (Number) sheet.getElement(startAX + x, startAY + y);
