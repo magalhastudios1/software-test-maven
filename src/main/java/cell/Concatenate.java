@@ -10,7 +10,7 @@ public class Concatenate extends Cell implements TextFormula {
     private int startY;
     private int endY;
 
-    public Concatenate(int startX, int endX, int startY, int endY){
+    public Concatenate(int startX, int endX, int startY, int endY) {
         this.startX = startX;
         this.endX = endX;
 
@@ -19,11 +19,11 @@ public class Concatenate extends Cell implements TextFormula {
     }
 
     @Override
-    public String calculate(){
+    public String calculate() {
         Sheet sheet = getSheet();
         String result = "";
-        for(int x = startX; x < endX; x++){
-            for(int y = startY; y < endY; y++){
+        for (int y = startY; y < endY; y++) {
+            for (int x = startX; x < endX; x++) {
                 result += sheet.getElement(x, y).toString();
             }
         }
@@ -31,7 +31,7 @@ public class Concatenate extends Cell implements TextFormula {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return String.valueOf(this.calculate());
     }
 }
