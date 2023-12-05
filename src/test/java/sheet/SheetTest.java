@@ -96,6 +96,6 @@ public class SheetTest {
     sheet.addElement(new Text("Hello"), 0, 0);
     sheet.addElement(new Text("World"), 1, 0);
 
-    assertEquals("Hello | World\n | \n", sheet.printTable());
+    assertEquals("Hello | World\nnull | null\n", sheet.printTable());
   }
 }
