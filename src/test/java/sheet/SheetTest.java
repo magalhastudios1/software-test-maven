@@ -55,6 +55,21 @@ public class SheetTest {
   }
 
   @Test
+  public void printTable_zeroElement_returnsEmptyString() {
+    Sheet sheet = Sheet.getInstance(0, 0);
+
+    assertEquals("", sheet.printTable());
+  }
+
+  @Test
+  public void printTable_oneElement_returnsTwoLines() {
+    Sheet sheet = Sheet.getInstance(1, 1);
+    sheet.addElement(new Text("Hello"), 0, 0);
+
+    assertEquals("Hello\n", sheet.printTable());
+  }
+
+  @Test
   public void printTable_oneRow_returnsLine() {
     Sheet sheet = Sheet.getInstance(2, 1);
     sheet.addElement(new Text("Hello"), 0, 0);
