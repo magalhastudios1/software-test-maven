@@ -49,7 +49,7 @@ public class SheetTest {
   @Test
   public void getElement_stringCoordenates_returnsElement() {
     Sheet sheet = Sheet.getInstance(50, 50);
-    sheet.addElement(new Text("Hello!"), 25, 25);
+    sheet.addElement(new Text("Hello!"), "Z25");
 
     assertEquals("Hello!", sheet.getElement("Z", "25").toString());
   }
@@ -88,5 +88,14 @@ public class SheetTest {
     sheet.addElement(new Number(20), 1, 1);
 
     assertEquals("Hello | World\n10.0 | 20.0\n", sheet.printTable());
+  }
+
+  @Test
+  public void printTable_twoRow_emptyRow_returnsTwoLines() {
+    Sheet sheet = Sheet.getInstance(2, 2);
+    sheet.addElement(new Text("Hello"), 0, 0);
+    sheet.addElement(new Text("World"), 1, 0);
+
+    assertEquals("Hello | World\n | \n", sheet.printTable());
   }
 }
