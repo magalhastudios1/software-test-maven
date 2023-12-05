@@ -14,8 +14,8 @@ public class TerminalTest {
     }
 
     @Test
-    public void getArea_oneInstance_returnsFirstInstanceArea() {
+    public void getArea() {
         Sheet sheet = Terminal.readFile(ASSETS_PATH + "input_file_01.txt");
-        assertEquals("50.0\n", sheet.printTable());
+        assertEquals(1, sheet.getArea());
     }
 }
