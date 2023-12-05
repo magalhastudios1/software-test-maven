@@ -21,10 +21,10 @@ import java.util.List;
  * number width height value // number cell
  */
 public class Terminal {
-    private List<String> ONE_NUMBER_CELL_TYPES = Arrays.asList("number", "ceil", "factorial", "floor");
-    private List<String> TWO_NUMBER_CELL_TYPES = Arrays.asList("exponential");
+    private static List<String> ONE_NUMBER_CELL_TYPES = Arrays.asList("number", "ceil", "factorial", "floor");
+    private static List<String> TWO_NUMBER_CELL_TYPES = Arrays.asList("exponential");
 
-    public Sheet readFile(String filePath) {
+    public static Sheet readFile(String filePath) {
         try {
             Scanner scanner = new Scanner(new File(filePath));
 
@@ -51,7 +51,7 @@ public class Terminal {
         }
     }
 
-    private Cell readLine(String cellType, Scanner scanner) {
+    private static Cell readLine(String cellType, Scanner scanner) {
         if (ONE_NUMBER_CELL_TYPES.contains(cellType)) {
             float value = scanner.nextFloat();
             if (cellType == "number") {
@@ -67,9 +67,7 @@ public class Terminal {
             float base = scanner.nextFloat();
             float exponent = scanner.nextFloat();
             return new Exponential(base, exponent);
-        } else {
-            
-        }
+        } 
         return new Number(0);
     }
 }
