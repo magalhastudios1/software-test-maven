@@ -6,7 +6,7 @@ import org.junit.Test;
 import sheet.Sheet;
 
 public class TerminalTest {
-    String ASSETS_PATH = "../assets/";
+    String ASSETS_PATH = "resources/";
     
     @Before
     public void setUp() {
