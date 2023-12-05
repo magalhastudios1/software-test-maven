@@ -15,7 +15,7 @@ public class TerminalTest {
 
     @Test
     public void getArea() {
-        Sheet sheet = Terminal.readFile(ASSETS_PATH + "input_file_01.txt");
+        Sheet sheet = Terminal.readFile("input_file_01.txt");
         assertEquals(1, sheet.getArea());
     }
 }
