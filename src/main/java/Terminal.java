@@ -67,6 +67,8 @@ public class Terminal {
             float base = scanner.nextFloat();
             float exponent = scanner.nextFloat();
             return new Exponential(base, exponent);
+        } else {
+            
         }
         return new Number(0);
     }
