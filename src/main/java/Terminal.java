@@ -37,11 +37,10 @@ public class Terminal {
                 String cellType = scanner.next();
 
                 // Lê as coordenadas
-                int x = scanner.nextInt();
-                int y = scanner.nextInt();
+                String location = scanner.next();
 
                 Cell cell = readLine(cellType, scanner);
-                sheet.addElement(cell, x, y);
+                sheet.addElement(cell, location);
             }
 
             scanner.close();

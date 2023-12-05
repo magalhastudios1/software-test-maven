@@ -32,6 +32,16 @@ public final class Sheet {
         return this.width * this.height;
     }
 
+    public void addElement(Cell cell, String location) {
+        String xString = location.replaceAll("[^A-Za-z]+", "");
+        String yString = location.replaceAll("[^0-9]", "");
+
+        int xInt = xStringToInteger(xString);
+        int yInt = Integer.valueOf(yString);
+
+        board[yInt][xInt] = cell;
+    }
+
     public void addElement(Cell cell, int x, int y) {
         board[y][x] = cell;
     }
@@ -40,9 +50,9 @@ public final class Sheet {
         return this.board[y][x];
     }
 
-    public Cell getElement(String x, String y) {
-        int xInt = xStringToInteger(x);
-        int yInt = Integer.valueOf(y);
+    public Cell getElement(String xString, String yString) {
+        int xInt = xStringToInteger(xString);
+        int yInt = Integer.valueOf(yString);
         return getElement(xInt, yInt);
     }
 
